@@ -1,0 +1,85 @@
+body {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* FIELD */
+.field, .grid {
+  position: absolute;
+  width: 510px;
+  height: 510px;
+  background-color: grey;
+  border-radius: 10px;
+  border:5px solid grey;
+  display: table;
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+.row, .grid_row {
+  width: 510px;
+  height: 135px;
+  position: relative;
+  display: table-row;
+}
+
+.cell, .grid_cell {
+  background-color: white;
+  width: 125px;
+  height: 125px;
+  position: relative;
+  display: table-cell;
+  /* border-radius: 10px; */
+  border: 5px solid grey;
+  text-align: center;
+  vertical-align: middle;
+  font-family: nunito;
+  font-size: 50px;
+}
+
+.grid_cell {
+  background-color: lightgrey;
+  color: white;
+}
+
+div > div > div > div {
+  opacity: 0;
+  position: absolute;
+}
+
+.tile {
+  opacity: 1;
+  width: 118px;
+  height: 126px;
+  background-color: white;
+  /* index: 150; */
+  border-radius: 0px;
+  font-weight: 200;
+  top: 0;
+  /* left: -1px; */
+  color: black;
+  transition: 0.3s all;
+  text-align: center;
+}
+
+#description{
+  display: none;
+  float: left;
+}
+
+.description{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: 100;
+  cursor: pointer;
+  border: 0px;
+  border-color: #aaa;
+  background-color: #88b1ef;
+  color: #fff;
+  font-size: 20px;
+  top: 50px;
+  transform: translate(-50%, -50%);
+  margin-left: 25px;
+  transition: 0.1s background-color;
+}

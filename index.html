@@ -1,12 +1,29 @@
 <head>
-<link rel="stylesheet" href="css/index.css">
-<script type="text/javascript" src="js/index.js">
-
-</script>
+  <link rel="stylesheet" href="css/index.css">
+  <script type="text/javascript" src="js/index.js">
+  </script>
 </head>
 
 <body>
   <div class="game">
+    <button id="startButton">Start Game</button>
+    <br>
+    <button id="mainInstruct">Instructions</button>
+    <br>
+    <button id="resetButton">↻</button>
+    <br><br>
+    <div id="description">
+      <p> <b>How to play:</b><br>
+        Use your arrow-keys to slide the tiles.<br>
+        Two tiles with the same value in line can be merged.<br>
+        The goal is to merge the tiles and get the 2048 tile.<br>
+        The score is a sum of the merged tiles.<br>
+        <hr> Made by Jamaine Renzulli
+      </p>
+    </div>
+
+     <div class="score">Score<br/><span id="value"></span></div>
+
     <div class="field">
 
       <div class="row">
