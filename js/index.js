@@ -243,7 +243,8 @@ function resetCell() {
     }
   }
   if (count === 16) {
-    alert('you lose');
+    var l = document.getElementById('loseScreen')
+    l.style.display = "block";
   } else if (document.getElementsByClassName('grid')) {
     cellCreator(1);
   }
@@ -287,6 +288,7 @@ function colors(value, tile) { //TAKES IN THE VALUES AND TILE TO CONVERT COLOR
       tile.style.color = 'black';
       var w = document.getElementById('winScreen')
       w.style.display = "block";
+
       break;
   }
 }
@@ -317,6 +319,8 @@ function reset() { //CHECKS GRID THEN REMOVES THE TILES
       }
     }
   }
+  var l = document.getElementById('loseScreen', 'winScreen');
+  l.style.display = "none";
   resetCell(); // RESETS THE CELLS FROM PREVIOUS GAME
   cellCreator(1, 0); // INSERTS NEW CELLS
 }
@@ -331,8 +335,6 @@ function start() {
 function okBut() {
   o = document.getElementById('winScreen');
   o.style.display = "none";
-
-
 }
 
 function timer() {

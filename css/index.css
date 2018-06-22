@@ -14,7 +14,7 @@ body {
   border-radius: 10px;
   display: none;
   border: 5px solid #808080;
-  margin-left: 30%;
+  margin-left: 35%;
   margin-top: 2%;
 }
 
@@ -41,7 +41,7 @@ body {
 
 .grid_cell {
   background-color: lightgrey;
-  color: white;
+  /* color: white; */
 }
 
 div>div>div>div {
@@ -68,7 +68,7 @@ div>div>div>div {
   background-color: lightgrey;
   border-radius: 10px;
   border: 5px solid grey;
-  margin-left: 23%;
+  margin-left: 20%;
   margin-right: 30%;
   margin-top: 2%;
   text-align: center;
@@ -85,21 +85,30 @@ div>div>div>div {
   color: white;
 }
 
-#winScreen{
+#winScreen, #loseScreen{
   position: absolute;
-  width: 380px;
-  height: 300px;
+  width: 435px;
+  height: 415px;
   background-color: lightgrey;
   border-radius: 10px;
   border: 5px solid grey;
-  margin-left: 28%;
-  margin-right: 30%;
-  margin-top: 10%;
+  margin-left: 23%;
+  margin-top: 5%;
   text-align: center;
   color: #303030;
   z-index: 1000;
   font-size: 30px;
+}
+#loseScreen{
   display: none;
+}
+#winScreen{
+  display: none;
+}
+
+#winner{
+  width: 80px;
+  height: 110px;
 }
 
 .head {
