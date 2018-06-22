@@ -14,11 +14,14 @@ function buildGridOverlay() {
   var instructs = document.getElementById('mainInstruct').addEventListener('click', function(e) {
     instructions();
   });
-  var instructs = document.getElementById('resetButton').addEventListener('click', function(e) {
+  var resetNow = document.getElementById('resetButton').addEventListener('click', function(e) {
     reset();
   });
-  var instructs = document.getElementById('startButton').addEventListener('click', function(e) {
+  var startNow = document.getElementById('startButton').addEventListener('click', function(e) {
     start();
+  });
+  var okButton = document.getElementById('okButton').addEventListener('click', function(e) {
+    okBut();
   });
 
   table.className += 'grid';
@@ -183,7 +186,7 @@ function moveTilesMain(x, y, X, Y, xBorder, yBorder) {
   if (xAround > 0 && xAround < 5 && yAround > 0 && yAround < 5 && checker.className == 'grid_cell active') {
     var around = document.getElementById('' + xAround + yAround);
 
-    //------------MERGING-----------------------------------------------------------
+    //----------------MERGING-------------------------------------------------------
 
     if (around.className == 'grid_cell active') { //
       // CATCHING
@@ -191,6 +194,7 @@ function moveTilesMain(x, y, X, Y, xBorder, yBorder) {
       if (aroundTile.innerHTML == tile.innerHTML) {
         // SAME
         var value = tile.dataset.value * 2; //HOW MUCH SHOULD WE TIMES THE VALUE BY
+        //INCREMENT THE VALUE BY THE VALUE OF THE SCORE
         aroundTile.dataset.value = '' + value; // THE UNKNOWN VALUE * 2
         aroundTile.className = 'tile ' + value;
         aroundTile.innerHTML = '' + value;
@@ -198,9 +202,11 @@ function moveTilesMain(x, y, X, Y, xBorder, yBorder) {
         checker.removeChild(tile); // REMOVE ONE OF THE TILES
         checker.className = 'grid_cell';
         around.className = 'grid_cell active merged'; //NEW NAME FOR AROUND WHEN MERGED
-        // document.getElementsByClassName('grid').id = 'moved';
-        // document.getElementsByClassName('grid').className = 'grid ' + value;
+        this
+        document.getElementsByClassName('grid').id = 'moved';
+        document.getElementsByClassName('grid').className = 'grid ' + value;
         var grid = document.getElementById('');
+
       }
     } else if (around.className == 'grid_cell') {
       //not catching
@@ -246,40 +252,51 @@ function resetCell() {
 
 //------------------------------------------------------------------------------
 
-//-----------STYLE
+//--------------------------STYLE-----------------------------------------------
+
 function colors(value, tile) { //TAKES IN THE VALUES AND TILE TO CONVERT COLOR
   switch (value) {
     case 2:
-      tile.style.background = '#fbfced';
+      tile.style.background = '#FBFCED';
       tile.style.color = 'black';
       break;
     case 4:
-      tile.style.background = '#ecefc6';
+      tile.style.background = '#ECEFC6';
       tile.style.color = 'black';
       break;
     case 8:
-      tile.style.background = '#ffb296';
+      tile.style.background = '#ED9F23';
       tile.style.color = 'black';
+      // document.getElementsByClassName('field').disabled = true;
       break;
     case 16:
-      tile.style.background = '#ff7373';
+      tile.style.background = '#C4811D';
       tile.style.color = 'black';
+      // alert('youve mad it')
       break;
     case 32:
-      tile.style.background = '#f6546a';
+      tile.style.background = '#BF382B';
       tile.style.color = 'black';
       break;
     case 64:
-      tile.style.background = '#8b0000';
+      tile.style.background = '#A81C0D';
       tile.style.color = 'black';
       break;
-    case 64:
-      tile.style.background = '#8b0000';
+    case 128:
+      tile.style.background = '#EADA00';
       tile.style.color = 'black';
+      var w = document.getElementById('winScreen')
+      w.style.display = "block";
       break;
   }
 }
+
 //-------------BUTTONS-------------------------
+
+function score() {
+
+
+}
 
 function instructions() {
   var x = document.getElementById("description");
@@ -302,28 +319,22 @@ function reset() { //CHECKS GRID THEN REMOVES THE TILES
   }
   resetCell(); // RESETS THE CELLS FROM PREVIOUS GAME
   cellCreator(1, 0); // INSERTS NEW CELLS
-
 }
 
 function start() {
+  var x = document.getElementsByClassName('grid', 'field');
+  var y = document.getElementsByClassName('startScreen');
+  y[0].style.display = "none"; // MAKE SURE
+  x[0].style.display = "table";
+}
+
+function okBut() {
+  o = document.getElementById('winScreen');
+  o.style.display = "none";
+
 
 }
 
 function timer() {
-  for (var i = 0; i < 1000; i++) {
-    setTimeout(function() {
-      console.log(i);
-    })(i), (i * 1000);
-  }
+
 }
-
-
-
-function score() {
-
-  var grid = document.getElementById('');
-  var value = grid.dataset.value;
-  document.getElementById('value').innerHTML = ''+value;
-}
-score();
-console.log(score);

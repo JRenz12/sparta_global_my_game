@@ -1,28 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
 <head>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
   <script type="text/javascript" src="js/index.js">
   </script>
+  <script type="text/javascript" src="css/bootstrap/js/bootstrap.js">
+  </script>
+
+  <title></title>
 </head>
 
 <body>
-  <div class="game">
-    <button id="startButton">Start Game</button>
-    <br>
-    <button id="mainInstruct">Instructions</button>
-    <br>
-    <button id="resetButton">↻</button>
-    <br><br>
-    <div id="description">
-      <p> <b>How to play:</b><br>
-        Use your arrow-keys to slide the tiles.<br>
-        Two tiles with the same value in line can be merged.<br>
-        The goal is to merge the tiles and get the 2048 tile.<br>
-        The score is a sum of the merged tiles.<br>
-        <hr> Made by Jamaine Renzulli
-      </p>
+  <div class="container game">
+    <div class="head text-center">
+      <img src="images/logo.png" alt="">
+      <button id="resetButton">↻</button>
+    </div>
+    <div class="score"><span id="value"></span>
+
+      <div id="winScreen">
+        <p>You've reached 128!<br>
+          Continue to reach new heights
+        </p>
+        <button id="okButton">OK</button>
+
+      </div>
+
     </div>
 
-     <div class="score">Score<br/><span id="value"></span></div>
+    <div class="startScreen ">
+      <h2>WELCOME</h2>
+      <button id="startButton">START GAME</button>
+      <br>
+
+      <button id="mainInstruct">INSTRUCTIONS</button>
+      <br><br>
+      <div id="description">
+        <p> <b>How to play:</b><br> Use your arrow-keys to slide the tiles.<br> Two tiles with the same value can be merged.<br> The goal is to merge the tiles and get the 2048 tile.<br> The score is a sum of the merged tiles.<br>
+          <hr> Made by Jamaine Renzulli
+        </p>
+      </div>
+    </div>
 
     <div class="field">
 
@@ -53,5 +74,9 @@
     </div>
 
   </div>
-
+  <script type="text/javascript" src="js/jquery.js">
+  </script>
 </body>
+</body>
+
+</html>
